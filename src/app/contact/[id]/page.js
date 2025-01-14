@@ -19,7 +19,7 @@ export default function Contact({params}) {
         fetchContact()
     },[])
 
-if(!contacto){
+while(!contacto){
     return (<p>Espera</p>)
 }
     return(
