@@ -24,6 +24,19 @@ export async function DELETE(request){
     if(error){
         return new Response(JSON.stringify(error), {status:404})
     }
-    
+
     return new Response(JSON.stringify({success: "eliminado con éxito"}), {status:200})
+}
+
+export async function POST(request){
+    const body = await request.json()
+    const contacto = body.contact
+    const {data: postData, error} = await supabase.from("contacto").insert(contacto)
+
+    if(!error){
+        return new Response(JSON.stringify({success: "Creado con éxito"}), {status:201})
+    }
+
+    return new Response(JSON.stringify(error) , {status:400})
+    
 }

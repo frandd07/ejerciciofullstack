@@ -39,8 +39,13 @@ export default function ListContact(){
             {contacts.map(contact => 
             <p key={contact.id}>
             <Link  href={"/contact/" + contact.id}>{contact.nombre} {contact.apellidos} </Link>
-            <button onClick={() => deleteContact(contact.id)}>Eliminar</button></p>
+            <button onClick={() => deleteContact(contact.id)}>Eliminar</button>
+            </p>
+            
+            
             )}
+
+            <Link href={"/contact/create"}>Agregar contacto</Link>
         </div>
     )
 }
