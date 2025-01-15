@@ -12,27 +12,40 @@ export default function CreateContact(){
 
     
 
-    if(nombre !== "" && apellidos !== "" && telefono !== ""){
-        async function crearContacto(e){
-            e.preventDefault()
-            const response = await fetch("/api/contact", {
-                method: 'POST',
-                headers: {"Content-Type": "application-json"},
-                body: JSON.stringify(
-                    {contact: {
-                        nombre: nombre,
-                        apellidos: apellidos,
-                        correo: correo,
-                        num_telefono: numTelefono,
-                        fecha_nacimiento: fechaNacimiento
-                    }}
-                )
-            })
+    if (nombre !== "" && apellidos !== "" && telefono !== "" && correo !== "") {
+        const telefonoValido = /^\d{9}$/.test(telefono); 
+        const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
     
+        if (telefonoValido && correoValido) {
+            async function crearContacto(e) {
+                e.preventDefault();
+                const response = await fetch("/api/contact", {
+                    method: 'POST',
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        contact: {
+                            nombre: nombre,
+                            apellidos: apellidos,
+                            correo: correo,
+                            num_telefono: telefono,
+                            fecha_nacimiento: fechaNacimiento
+                        }
+                    })
+                });
+                if (response.ok) {
+                    alert("Contacto creado exitosamente.");
+                } else {
+                    alert("Hubo un error al crear el contacto.");
+                }
+            }
+        } else {
+            if (!telefonoValido) alert("El número de teléfono debe tener exactamente 9 dígitos.");
+            if (!correoValido) alert("El correo electrónico debe tener un formato válido (ejemplo: x@x.x).");
         }
-    }else{
-        alert("Algunos de los campos estan vacíos")
+    } else {
+        alert("Algunos de los campos están vacíos.");
     }
+    
    
 
     return(
