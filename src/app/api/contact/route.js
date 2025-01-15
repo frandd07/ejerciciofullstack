@@ -40,3 +40,10 @@ export async function POST(request){
     return new Response(JSON.stringify(error) , {status:400})
     
 }
+
+export async function PUT(request){
+    const body = await request.json()
+    const id = body.id
+    const {data: updateData, error} = await supabase.from("contacto").update(body.update).eq("id",id)
+    return new Response(JSON.stringify({success: "actualizado"},{status:200}))
+    }
