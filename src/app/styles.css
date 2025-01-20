@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    background-color: lightcyan;
+    font-family: "Poppins";
+    max-width: 800px;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    font-size: 4rem;
+    color: chocolate;
+}
+
+.botonEliminar{
+    background-color: #e64a33;
+    border:none;
+    border-radius: 10px;
+    
+}
+
+button:hover{
+    opacity: 0.6;
+}
+
+input, textarea {
+    padding: 3px; 
+    border-radius: 5px;
+    background-color: blanchedalmond;
+    border: 1px solid #2c2e2c;
+} 
+
+.botonAnadir{
+    background-color: #d8ec7c;
+}
+
+.botonAnadir:hover {
+    background-color: #00eb62;
+    box-shadow: 0 6px 12px rgba(0, 128, 0, 0.3); 
+}
+
+

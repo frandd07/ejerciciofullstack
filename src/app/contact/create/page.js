@@ -109,7 +109,7 @@ export default function CreateContact() {
           />
         </label>
         <br />
-        <input type="submit" value="Crear" />
+        <input className="botonAnadir" type="submit" value="Añadir contacto" />
       </form>
     </div>
   );

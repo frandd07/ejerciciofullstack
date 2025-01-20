@@ -116,7 +116,7 @@ if(contacto && !isEditing){
           />
         </label>
         <br />
-        <input type="submit" value="Crear" />
+        <input type="submit" value="Editar contacto" />
       </form>)
 }else{
     return (<p>Not found</p>)
