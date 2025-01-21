@@ -34,7 +34,7 @@ export default function ListContact(){
     }
 
     return(
-        <div>
+        <div className="container">
             <h1>Lista de contactos</h1>
             {contacts.map(contact => 
             <p key={contact.id}>
@@ -44,7 +44,7 @@ export default function ListContact(){
             
             
             )}
-
+           <br/> 
             <Link href={"/contact/create"}>Agregar contacto</Link>
         </div>
     )

@@ -56,7 +56,7 @@ export default function Contact({params}) {
 
 if(contacto && !isEditing){
     return(
-        <div>
+        <div className="container">
             <h1>{contacto.nombre}</h1>
             <h2>{contacto.apellidos}</h2>
             <p>{contacto.correo}</p>

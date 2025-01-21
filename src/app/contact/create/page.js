@@ -56,7 +56,7 @@ export default function CreateContact() {
   }
 
   return (
-    <div>
+    <div className="container">
       <h1>Añadir contacto</h1>
       <form onSubmit={crearContacto}>
         <label>
