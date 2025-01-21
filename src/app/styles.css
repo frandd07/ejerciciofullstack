@@ -3,12 +3,23 @@
 body {
     background-color: lightcyan;
     font-family: "Poppins";
-    max-width: 800px;
-    margin: 20px;
-    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px; 
+    margin: 0 auto;  
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
+    border-radius: 10px;  
+}
+
+p:hover {
+    background-color: #f1f1f1;  
 }
 
 h1{
@@ -20,7 +31,7 @@ h1{
 .botonEliminar{
     background-color: #e64a33;
     border:none;
-    border-radius: 10px;
+    border-radius: 5px;
     
 }
 
@@ -30,6 +41,7 @@ button:hover{
 
 input, textarea {
     padding: 3px; 
+    margin: 6px;
     border-radius: 5px;
     background-color: blanchedalmond;
     border: 1px solid #2c2e2c;
@@ -42,6 +54,32 @@ input, textarea {
 .botonAnadir:hover {
     background-color: #00eb62;
     box-shadow: 0 6px 12px rgba(0, 128, 0, 0.3); 
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    p {
+        padding: 10px;
+        font-size: 0.9rem;  
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    input, select {
+        font-size: 1rem;
+        padding: 12px;  
+    }
+
+    .botonAnadir, .botonEliminar {
+        padding: 10px;
+        font-size: 0.9rem; 
+    }
 }
 
 
